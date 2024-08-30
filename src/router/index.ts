@@ -1,11 +1,21 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
+
 import TabsPage from '../views/TabsPage.vue'
+import UCPage from '../views/UnderConstruction.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/underconstruction'
+  },
+  {
+    path: '/underconstruction',
+    component: UCPage,
+  },
+  {
+    path: '/:catchAll(.*)', // Menangkap semua route yang tidak ada
+    redirect: '/',
   },
   {
     path: '/tabs/',
